@@ -1,22 +1,26 @@
 {
-  "name": "server-monitoring",
+  "name": "bello",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server Monitoring Toolset",
   "main": "index.js",
+  "bin": "cli/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/hain21/server-monitoring.git"
+    "url": "git+https://github.com/andreasmischke/bello.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "server",
+    "monitoring"
+  ],
+  "author": "Andreas Mischke <andreas@mischke.me>",
+  "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/hain21/server-monitoring/issues"
+    "url": "https://github.com/andreasmischke/bello/issues"
   },
-  "homepage": "https://gitlab.com/hain21/server-monitoring#README",
+  "homepage": "https://github.com/andreasmischke/bello#readme",
   "dependencies": {
     "argh": "^0.1.4",
     "get-ssl-certificate": "^2.1.2"
