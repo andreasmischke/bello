@@ -1,0 +1,24 @@
+{
+  "name": "server-monitoring",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/hain21/server-monitoring.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/hain21/server-monitoring/issues"
+  },
+  "homepage": "https://gitlab.com/hain21/server-monitoring#README",
+  "dependencies": {
+    "argh": "^0.1.4",
+    "get-ssl-certificate": "^2.1.2"
+  }
+}
