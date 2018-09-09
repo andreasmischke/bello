@@ -6,10 +6,19 @@ const padRight = str => {
     : `    ${str}               `.substr(0, 19);
 };
 
+const commandHelp = command => {
+  if (!lib[command]) {
+    console.error(`  ${command} is not a valid command.`);
+    usage();
+  } else if (!lib[command].help) {
+    console.error(`  No help available for command ${command}.`);
+  } else {
+    console.log(lib[command].help);
+  }
+};
 
-module.exports = async () => {
-
-  const commandHelp = Object.keys(lib)
+const usage = () => {
+  const commands = Object.keys(lib)
     .map(command => `${padRight(command)} ${lib[command].description}`)
     .join('\n');
 
@@ -20,7 +29,7 @@ console.log(`
     <none yet>
 
   Commands:
-${commandHelp}
+${commands}
 
   Run
     bello help COMMAND
@@ -28,3 +37,5 @@ ${commandHelp}
   Visit https://github.com/andreasmischke/bello to learn more about bello
 `);
 };
+
+module.exports = async command => command ? commandHelp(command) : usage();

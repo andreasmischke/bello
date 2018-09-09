@@ -5,7 +5,9 @@ const help = require('./help');
 
 const cmd = argv.argv && argv.argv.shift();
 
-if (lib[cmd]) {
+if (cmd === 'help') {
+  help(argv.argv.shift());
+} else if (lib[cmd]) {
   lib[cmd].cli(argv);
 } else {
   help();

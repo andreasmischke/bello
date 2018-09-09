@@ -29,9 +29,11 @@ const cli = async argv => {
 };
 
 const description = 'Get details of Servers SSL certificate';
+const help = '  Help not written yet. :(';
 
 module.exports = {
   getCertificateDetails,
   cli,
   description,
+  help,
 };
