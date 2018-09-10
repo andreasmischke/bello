@@ -23,17 +23,6 @@ const getCertificateDetails = async domain => {
   }
 };
 
-const cli = async argv => {
-  const [ domain ] = argv.argv;
-  console.log(await getCertificateDetails(domain));
-};
-
-const description = 'Get details of Servers SSL certificate';
-const help = '  Help not written yet. :(';
-
 module.exports = {
   getCertificateDetails,
-  cli,
-  description,
-  help,
 };

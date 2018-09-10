@@ -2,27 +2,11 @@
   "name": "bello",
   "version": "1.0.0",
   "description": "Server Monitoring Toolset",
-  "main": "index.js",
-  "bin": "cli/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/andreasmischke/bello.git"
-  },
-  "keywords": [
-    "server",
-    "monitoring"
-  ],
+  "private": true,
+  "repository": "git@github.com:andreasmischke/bello.git",
   "author": "Andreas Mischke <andreas@mischke.me>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andreasmischke/bello/issues"
-  },
-  "homepage": "https://github.com/andreasmischke/bello#readme",
-  "dependencies": {
-    "argh": "^0.1.4",
-    "get-ssl-certificate": "^2.1.2"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }

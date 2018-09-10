@@ -1,4 +1,6 @@
-const lib = require('../index');
+const commands = {
+  ssl: require('./ssl'),
+};
 
 const padRight = str => {
   return str.length >= 15
@@ -7,19 +9,19 @@ const padRight = str => {
 };
 
 const commandHelp = command => {
-  if (!lib[command]) {
+  if (!commands[command]) {
     console.error(`  ${command} is not a valid command.`);
     usage();
-  } else if (!lib[command].help) {
+  } else if (!commands[command].help) {
     console.error(`  No help available for command ${command}.`);
   } else {
-    console.log(lib[command].help);
+    console.log(commands[command].help());
   }
 };
 
 const usage = () => {
-  const commands = Object.keys(lib)
-    .map(command => `${padRight(command)} ${lib[command].description}`)
+  const commandList = Object.keys(commands)
+    .map(command => `${padRight(command)} ${commands[command].description()}`)
     .join('\n');
 
 console.log(`
@@ -29,7 +31,7 @@ console.log(`
     <none yet>
 
   Commands:
-${commands}
+${commandList}
 
   Run
     bello help COMMAND
@@ -38,4 +40,14 @@ ${commands}
 `);
 };
 
-module.exports = async command => command ? commandHelp(command) : usage();
+const cli = async argv => {
+  if(argv.argv && argv.argv.length > 0) {
+    commandHelp(argv.argv.shift());
+  } else {
+    usage();
+  }
+}
+
+module.exports = {
+  cli,
+}
